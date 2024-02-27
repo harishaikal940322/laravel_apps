@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 pb-4">
                 <div class="card pb-4">
                     <form action="{{ route('customer.store') }}" method="POST">
                         @csrf
@@ -31,6 +31,8 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
                         <h3>List Of Customer</h3>
