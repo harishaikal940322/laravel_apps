@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -13,7 +14,9 @@ class CustomerController extends Controller
     {
         //
         // return 'Hellow world -r';
-        return view('customer.index');
+        $q = Customer::all();
+        // dd($q);
+        return view('customer.index', compact('q'));
     }
 
     /**

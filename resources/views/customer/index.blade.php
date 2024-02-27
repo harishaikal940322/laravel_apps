@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 pb-4">
-                <div class="card pb-4">
+                <div class="card">
                     <form action="{{ route('customer.store') }}" method="POST">
                         @csrf
                         @method('POST')
@@ -36,6 +36,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>List Of Customer</h3>
+
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -43,11 +44,19 @@
                                 <tr>
                                     <td>#</td>
                                     <td>Customer</td>
+                                    <td>Address 1</td>
                                     <td>Action</td>
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($q as $index => $row)
+                                    <tr>
+                                        <td>{{ ++$index }}</td>
+                                        <td>{{ $row->name }}</td>
+                                        <td>{{ $row->address1 }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
