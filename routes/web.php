@@ -35,3 +35,8 @@ Route::get('/index2', [App\Http\Controllers\CustomerController::class, 'create']
 //CRUD customer
 
 Route::post('customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('customer.store');
+
+
+// Customer Transaction
+Route::get('transaction/index', [App\Http\Controllers\CustomerTransactionController::class, 'index'])->name('transaction.form');
+Route::post('transaction/store', [App\Http\Controllers\CustomerTransactionController::class, 'store'])->name('transaction.store');
