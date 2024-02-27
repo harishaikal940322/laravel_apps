@@ -30,6 +30,35 @@
                     </form>
                 </div>
             </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>List Of Transaction</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>Customer ID</td>
+                                    <td>Invoice</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($q as $index => $row)
+                                    <tr>
+                                        <td>{{ ++$index }}</td>
+                                        <td>{{ $row->custName->name}}</td>
+                                        <td>{{ $row->invoice }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
