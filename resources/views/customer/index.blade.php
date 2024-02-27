@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <form action="{{route('customer.store')}}" method="POST">
+                <div class="card pb-4">
+                    <form action="{{ route('customer.store') }}" method="POST">
                         @csrf
                         @method('POST')
                         <div class="card-header">
@@ -30,6 +30,25 @@
                             <input type="submit" class="btn btn-primary" value="SUBMIT">
                         </div>
                     </form>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>List Of Customer</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>Customer</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
