@@ -54,7 +54,13 @@
                                         <td style="text-align: center">{{ ++$index }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->address1 }}</td>
-                                        <td></td>
+                                        <td>
+                                            <form action="{{ route('customer.destroy', $row->id) }}" method="post">
+                                                @method('delete')
+                                                @csrf
+                                                <input type="submit" class="btn btn-danger btn-sm" value="DELETE">
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

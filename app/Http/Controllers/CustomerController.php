@@ -79,6 +79,11 @@ class CustomerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd(request()->all(), $id);
+
+        $customer = Customer::findOrFail(10);
+        $customer->delete();
+
+        return redirect()->back();
     }
 }
