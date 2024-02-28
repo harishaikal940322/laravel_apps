@@ -62,6 +62,8 @@
                                                 {{-- <input type="button" onclick="confirm('Delete Data?')" class="btn btn-danger btn-sm" value="DELETE"> --}}
                                                 <button class="btn btn-danger btn-sm">DELETE</button>
                                             </form>
+                                            <a href="{{ route('transaction.edit', $row->id) }}"
+                                                class="btn btn-success btn-sm">EDIT</a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -58,6 +58,9 @@ class CustomerTransactionController extends Controller
     public function edit(string $id)
     {
         //
+        $transaction = CustomerTransaction::findOrFail($id);
+        $customer = Customer::all();
+        return view('customer.transactionUpdate', compact('transaction', 'customer'));
     }
 
     /**
