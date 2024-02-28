@@ -21,7 +21,7 @@
                             <div class="row">
                                 <label class="label" for="address">Customer ID</label>
                                 <div class="col-md-8">
-                                    <select name="id" id="" class="form-control">
+                                    <select name="id" id="" class="form-control select">
                                         @foreach ($customer as $item)
                                             <option {{ $item->id == $transaction->customer_id ? 'selected' : '' }}
                                                 value="{{ $item->id }}">{{ $item->name }}</option>
