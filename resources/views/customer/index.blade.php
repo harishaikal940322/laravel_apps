@@ -55,13 +55,17 @@
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->address1 }}</td>
                                         <td>
-                                            <form action="{{ route('customer.destroy', $row->id) }}" method="post">
-                                                @method('delete')
-                                                @csrf
-                                                {{-- <input type="button" onclick="confirm('Delete Data?')" class="btn btn-danger btn-sm" value="DELETE"> --}}
-                                                <button onclick="confirmDelete(event)"
-                                                    class="btn btn-danger btn-sm">DELETE</button>
-                                            </form>
+                                            <div style="text-align: center">
+                                                <form action="{{ route('customer.destroy', $row->id) }}" method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                    {{-- <input type="button" onclick="confirm('Delete Data?')" class="btn btn-danger btn-sm" value="DELETE"> --}}
+                                                    <button onclick="confirmDelete(event)"
+                                                        class="btn btn-danger btn-sm">DELETE</button>
+                                                </form>
+                                                <a href="{{ route('customer.edit', $row->id) }}"
+                                                    class="btn btn-sm btn-success">EDIT</a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

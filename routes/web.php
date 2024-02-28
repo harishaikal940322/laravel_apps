@@ -35,6 +35,7 @@ Route::get('/index2', [App\Http\Controllers\CustomerController::class, 'create']
 Route::get('customer/index', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer.index');
 Route::post('customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('customer.store');
 Route::delete('customer/destroy/{id}', [App\Http\Controllers\CustomerController::class, 'destroy'])->name('customer.destroy');
+Route::GET('customer/edit/{id}', [App\Http\Controllers\CustomerController::class, 'edit'])->name('customer.edit');
 
 // Customer Transaction
 Route::get('transaction/index', [App\Http\Controllers\CustomerTransactionController::class, 'index'])->name('transaction.form');
