@@ -16,7 +16,6 @@ class CustomerTransactionController extends Controller
         //
         $q = CustomerTransaction::with('custName')->get();
         $q2 = Customer::all();
-        // dd($q2);
         return view('customer.form', compact('q', 'q2'));
     }
 
@@ -79,7 +78,7 @@ class CustomerTransactionController extends Controller
         $transaction->customer_id = $cust_id;
         $transaction->save();
 
-        return redirect()->back();
+        return redirect()->route('transaction.form')->with('status', 'Saved Data');
     }
 
     /**

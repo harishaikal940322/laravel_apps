@@ -4,6 +4,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <form action="{{ route('transaction.store') }}" method="POST">
                         @csrf
                         @method('POST')
@@ -20,7 +25,8 @@
                             <div class="row">
                                 <label class="label" for="address">Customer ID</label>
                                 <div class="col-md-8">
-                                    <select name="id" id="selectName" class="form-control select" data-live-search="true">
+                                    <select name="id" id="selectName" class="form-control select"
+                                        data-live-search="true">
                                         @foreach ($q2 as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
@@ -74,7 +80,5 @@
             </div>
         </div>
     </div>
-    <script>
-
-    </script>
+    <script></script>
 @endsection
