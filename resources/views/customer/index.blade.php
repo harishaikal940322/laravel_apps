@@ -58,7 +58,9 @@
                                             <form action="{{ route('customer.destroy', $row->id) }}" method="post">
                                                 @method('delete')
                                                 @csrf
-                                                <input type="submit" class="btn btn-danger btn-sm" value="DELETE">
+                                                {{-- <input type="button" onclick="confirm('Delete Data?')" class="btn btn-danger btn-sm" value="DELETE"> --}}
+                                                <button onclick="confirmDelete(event)"
+                                                    class="btn btn-danger btn-sm">DELETE</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -70,4 +72,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function confirmDelete(event) {
+            if (!confirm('Delete Data?')) {
+                event.preventDefault(); // Prevents form submission if cancel is clicked
+            }
+        }
+    </script>
 @endsection
