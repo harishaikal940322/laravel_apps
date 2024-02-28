@@ -81,7 +81,7 @@ class CustomerController extends Controller
     {
         // dd(request()->all(), $id);
 
-        $customer = Customer::findOrFail(10);
+        $customer = Customer::findOrFail($id);
         $customer->delete();
 
         return redirect()->back();
