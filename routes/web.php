@@ -33,7 +33,7 @@ Route::get('/test2', function () {
 Route::get('/index2', [App\Http\Controllers\CustomerController::class, 'create'])->name('index2');
 
 //CRUD customer
-Route::get('customer/index', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer/index');
+Route::get('customer/index', [App\Http\Controllers\CustomerController::class, 'index'])->name('customer.index');
 Route::post('customer/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('customer.store');
 
 
