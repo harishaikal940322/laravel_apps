@@ -55,7 +55,14 @@
                                         <td>{{ ++$index }}</td>
                                         <td>{{ $row->custName->name }}</td>
                                         <td>{{ $row->invoice }}</td>
-                                        <td></td>
+                                        <td>
+                                            <form action="{{ route('transaction.destroy', $row->id) }}" method="post">
+                                                @method('delete')
+                                                @csrf
+                                                {{-- <input type="button" onclick="confirm('Delete Data?')" class="btn btn-danger btn-sm" value="DELETE"> --}}
+                                                <button class="btn btn-danger btn-sm">DELETE</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

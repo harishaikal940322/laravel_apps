@@ -74,5 +74,9 @@ class CustomerTransactionController extends Controller
     public function destroy(string $id)
     {
         //
+        $transaction = CustomerTransaction::findOrFail($id);
+        $transaction->delete();
+
+        return redirect()->back();
     }
 }

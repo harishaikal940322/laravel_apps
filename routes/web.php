@@ -39,3 +39,4 @@ Route::delete('customer/destroy/{id}', [App\Http\Controllers\CustomerController:
 // Customer Transaction
 Route::get('transaction/index', [App\Http\Controllers\CustomerTransactionController::class, 'index'])->name('transaction.form');
 Route::post('transaction/store', [App\Http\Controllers\CustomerTransactionController::class, 'store'])->name('transaction.store');
+Route::delete('transaction/destroy/{id}', [App\Http\Controllers\CustomerTransactionController::class, 'destroy'])->name('transaction.destroy');
