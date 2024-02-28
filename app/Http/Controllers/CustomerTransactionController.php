@@ -60,7 +60,7 @@ class CustomerTransactionController extends Controller
         //
         $transaction = CustomerTransaction::findOrFail($id);
         $customer = Customer::all();
-        return view('customer.transactionUpdate', compact('transaction', 'customer'));
+        return view('customer.transactionUpdate', compact('transaction', 'customer', 'id'));
     }
 
     /**
@@ -69,6 +69,17 @@ class CustomerTransactionController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $invoice = $request->invoice;
+        $cust_id = $request->id;
+
+        // dd(request()->all());
+
+        $transaction = CustomerTransaction::findOrFail($id);
+        $transaction->invoice = $invoice;
+        $transaction->customer_id = $cust_id;
+        $transaction->save();
+
+        return redirect()->back();
     }
 
     /**

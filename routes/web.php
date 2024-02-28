@@ -43,3 +43,4 @@ Route::get('transaction/index', [App\Http\Controllers\CustomerTransactionControl
 Route::post('transaction/store', [App\Http\Controllers\CustomerTransactionController::class, 'store'])->name('transaction.store');
 Route::delete('transaction/destroy/{id}', [App\Http\Controllers\CustomerTransactionController::class, 'destroy'])->name('transaction.destroy');
 Route::get('transaction/edit/{id}', [App\Http\Controllers\CustomerTransactionController::class, 'edit'])->name('transaction.edit');
+Route::PUT('transaction/update/{id}', [App\Http\Controllers\CustomerTransactionController::class, 'update'])->name('transaction.update');

@@ -4,9 +4,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <form action="{{ route('transaction.store') }}" method="POST">
+                    <form action="{{ route('transaction.update', $id) }}" method="POST">
                         @csrf
-                        @method('POST')
+                        @method('PUT')
                         <div class="card-header">
                             <h4>Customer Transaction</h4>
                         </div>
