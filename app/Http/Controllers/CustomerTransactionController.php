@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\CustomerTransaction;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class CustomerTransactionController extends Controller
     {
         //
         $q = CustomerTransaction::with('custName')->get();
-        // dd($q);
-        return view('customer.form', compact('q'));
+        $q2 = Customer::all();
+        // dd($q2);
+        return view('customer.form', compact('q', 'q2'));
     }
 
     /**
@@ -31,8 +33,15 @@ class CustomerTransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        dd(request()->all());
+        $invoice = $request->invoice;
+        $cust_id = $request->id;
+
+        $transaction = new CustomerTransaction();
+        $transaction->invoice = $invoice;
+        $transaction->customer_id = $cust_id;
+        $transaction->save();
+
+        return redirect()->back();
     }
 
     /**

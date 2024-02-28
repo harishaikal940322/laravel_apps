@@ -39,19 +39,19 @@
 
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <td>#</td>
-                                    <td>Customer</td>
-                                    <td>Address 1</td>
-                                    <td>Action</td>
+                                    <th style="text-align: center">#</th>
+                                    <th style="text-align: center">Customer</th>
+                                    <th style="text-align: center">Address 1</th>
+                                    <th style="text-align: center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($q as $index => $row)
                                     <tr>
-                                        <td>{{ ++$index }}</td>
+                                        <td style="text-align: center">{{ ++$index }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->address1 }}</td>
                                         <td></td>

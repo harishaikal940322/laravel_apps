@@ -9,6 +9,7 @@ class CustomerTransaction extends Model
 {
     use HasFactory;
     public $table = 'customer_transaction';
+    protected $fillable = ['invoice', 'customer_id', 'created_at', 'updated_at'];
 
     public function custName()
     {

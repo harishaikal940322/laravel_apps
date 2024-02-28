@@ -14,13 +14,17 @@
                             <div class="row pb-4">
                                 <label class="label" for="name">Invoice</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" type="text" name="invoice" placeholder="Customer Name">
+                                    <input class="form-control" type="text" name="invoice" placeholder="Invoice Code">
                                 </div>
                             </div>
                             <div class="row">
                                 <label class="label" for="address">Customer ID</label>
                                 <div class="col-md-8">
-                                    <input class="form-control" type="text" name="id" placeholder="Customer ID">
+                                    <select name="id" id="" class="form-control">
+                                        @foreach ($q2 as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +53,7 @@
                                 @foreach ($q as $index => $row)
                                     <tr>
                                         <td>{{ ++$index }}</td>
-                                        <td>{{ $row->custName->name}}</td>
+                                        <td>{{ $row->custName->name }}</td>
                                         <td>{{ $row->invoice }}</td>
                                         <td></td>
                                     </tr>
