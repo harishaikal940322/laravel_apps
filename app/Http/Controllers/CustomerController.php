@@ -64,7 +64,7 @@ class CustomerController extends Controller
     public function edit(string $id)
     {
         $customer = Customer::findOrFail($id);
-        return view('customer.updateForm', compact('customer'));
+        return view('customer.updateForm', compact('customer', 'id'));
     }
 
     /**
@@ -73,6 +73,20 @@ class CustomerController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $nama = $request->name;
+        $alamat1 = $request->address1;
+        $alamat2 = $request->address2;
+        $alamat3 = $request->address3;
+
+        $customer = Customer::findOrFail($id);
+        $customer->name = $nama;
+        $customer->address1 = $alamat1;
+        $customer->address2 = $alamat2;
+        $customer->address3 = $alamat3;
+        $customer->save();
+
+        return redirect()->back();
+        // $customer
     }
 
     /**
